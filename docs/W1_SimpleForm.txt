@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h1>This is a simple Page with a Form. Nice.</h1>
+
+		<form action="mailto:dierk.koenig@fhnw.ch" method="post" enctype="text/plain">
+			Link to the best HTML Resource:<br>
+			<input type="text" name="link" size="50"><br>
+			Description:<br>
+			<input type="text" name="description" size="50"><br>
+			<input type="submit" value="Send">
+		</form>
+
+	</body>
+</html>
