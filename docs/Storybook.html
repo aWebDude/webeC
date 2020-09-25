@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Storybook for the Web Engineering Module</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+
+        body {
+            font-family:'Comic Sans MS', cursive, sans-serif;
+            height: 100%;
+            background-image: url("http://sf.co.ua/2012/wallpaper-1920569.jpg");
+            background-size:     cover;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center; 
+
+        }
+
+        h1 {
+            background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+            text-align: left;
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            animation: rainbow 8s ease infinite;
+        }
+        @keyframes rainbow { 
+            0%{background-position:0% 50%}
+            50%{background-position:100% 25%}
+            100%{background-position:0% 50%}
+        }
+
+        h2 {
+            margin-bottom: 3.5rem;
+            background-size:  100% 15%;
+            background-repeat: repeat-x;
+            background-position: left 0% bottom 0%;
+            background-image: linear-gradient(179deg,rgb(23, 40, 71) 0%, rgb(34, 192, 255) 50%,transparent 54%, transparent 100%);
+        }
+
+        dfn {
+            /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+                0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+            color: #fccaff; */
+            text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                color: #fff6a9;
+            font-family: "Sacramento", cursive;
+            text-align: center;
+            animation: blink 12s infinite;
+            -webkit-animation: blink 12s infinite;
+        }
+        @-webkit-keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                /*     color: #fccaff;
+                    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+                    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+                text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                    color: #fff6a9;
+                }
+        }
+        @keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                /*     color: #fccaff;
+                    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+                    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+                text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                    color: #fff6a9;
+            }
+        }
+        
+        abbr {
+            margin-top: 10rem;
+            text-align: center;
+            text-align: center;
+            font-weight: bold;
+            -webkit-animation: glow 2s ease-in-out infinite alternate;
+            -moz-animation: glow 2s ease-in-out infinite alternate;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes glow {
+            from {
+                color: #fff;
+                text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
+            }
+        
+            to {
+                color: gray;
+                text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+            }
+        }
+
+        code {
+            position: relative;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #000, rgb(197, 197, 197), #000);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(36, 36, 36, 0.596);
+        }
+        @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+            100% {
+                background-position: 500%;
+            }
+        }
+
+        table {
+            border-collapse:collapse;
+            }
+
+        thead {
+            background-color: #9696969c;
+            color: white;
+        }
+
+        thead:hover {
+            background-color: #070707bb;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        tr:hover, td:hover{
+            background-color: #f5f5f563;
+        }
+
+        tr.holiday {
+            color: rgba(0, 0, 0, 0.562);
+        }
+
+        tr.excercise {
+            color: rgb(196, 14, 29);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <dfn title="Drehbuch">Storybook</dfn> for the Web Engineering Module
+    </header>
+    <main>
+        <section id="context">
+            <h1>Module delivery mode</h1>
+            <p> This installment of the <dfn title="WebEngineering">webeC</dfn> module is delivered in the fall semester of 2020.
+            </p>
+
+        </section>
+        <section id="content">
+            <h1>Delivery dates and examination details</h1>
+            <article>
+                <h2>Overview</h2>
+                <table>
+                    <caption>Delivery dates</caption>
+                    <thead>
+                        <tr>
+                            <th> Date </th>
+                            <th> # </th>
+                            <th>Topic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Fr, 18.09.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>HTML</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 25.09.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>CSS</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 02.10.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Grails, Web, MVC</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 09.10.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>GSP, Template, Taglib, Layout</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 16.10.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Consolidation training, Testing</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 23.10.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Persistence, DB-Access (GORM)</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 30.10.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>REST, Services</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 06.11.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Role-based Security</th>
+                        </tr>
+                        <tr class="excercise">
+                            <th>Fr, 13.11.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Übungsvorbereitung ** Anwesenheitspflicht **</th>
+                        </tr>
+                        <tr class="excercise">
+                            <th>Fr, 20.11.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Übungsanlass</th>
+                        </tr>
+                        <tr class="holiday">
+                            <th>Fr, 27.11.20</th>
+                            <th>-</th>
+                            <th>Holiday</th>
+                        </tr>
+                        <tr class="excercise">
+                            <th>Fr, 04.12.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Übungsanlass</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 11.12.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Javascript</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 18.12.20</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Responsive / Mobile Web, Übungsabgabe </th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 08.01.21</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Deployment (*)</th>
+                        </tr>
+                        <tr>
+                            <th>Fr, 15.01.21</th>
+                            <th>12:15 - 15:00</th>
+                            <th>Prüfungsvorbereitung</th>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"> MSP date to be announced</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+            <article>
+                <h2> Total Effort</h2>
+                <p> Classroom lectures add up to <code>15 * 3h = 45h</code>.</p>
+                <p> Prework and afterwork, including homework adds up to <code>15 * 1h = 15h</code>.</p>
+                <p> The exercise for the continuous assessment grade takes <code>4 * 5h = 20h</code>.</p>
+                <p> Preparation for the final exam will take approximately <code>8h</code>.</p>
+                <p> Writing the final exam takes <code>2h</code>.</p>
+                <p> This makes a total of <code>90h</code>.</p>
+            </article>
+            <article id="criteria">
+                <h2> Passing criteria </h2>
+                <ul>
+                    <li>You have to attend the exercise preparation event.</li>
+                    <li>You have to do the exercise and deliver before the deadline.</li>
+                    <li>You have to attend the <dfn title="Modulschlussprüfung">final exam (MSP)</dfn>.</li>
+                </ul>
+                <p> Your exercise will determine your <abbr title="Erfahrungsnote">continuous assessment grade (EN)</abbr>. </p>
+                <p> EN and MSP together make your final grade. </p>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <address>Dierk König, 5.2B16,  <a href="mailto:dierk.koenig@fhnw.ch">dierk.koenig@fhnw.ch</a></address>
+    </footer>
+</body>
+
+</html>
